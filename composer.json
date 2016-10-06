@@ -1,0 +1,8 @@
+{
+    "name": "zuuperman/wkbe_page_properties",
+    "description": "Provides the wkbe page properties module.",
+    "type": "drupal-module",
+    "license": "GPL-2.0+",
+    "minimum-stability": "dev",
+    "require": {}
+}
