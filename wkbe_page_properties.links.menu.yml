@@ -1,0 +1,6 @@
+# Page properties menu items definition
+page_properties_entity.admin.structure.settings:
+  title: Page properties settings
+  description: 'Configure Page property entities'
+  route_name: page_properties_entity.settings
+  parent: system.admin_structure

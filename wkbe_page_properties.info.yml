@@ -1,0 +1,5 @@
+name: WK BE Page Properties
+type: module
+description: Provides the option to set page properties (header image, metatags, ...) for custom page callbacks / views via a custom entity type.
+core: 8.x
+package: Wunderkraut

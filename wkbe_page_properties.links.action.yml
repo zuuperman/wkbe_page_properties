@@ -1,0 +1,7 @@
+entity.page_properties_entity.add_form:
+  route_name: entity.page_properties_entity.add_form
+  title: 'Add Page property'
+  appears_on:
+    - entity.page_properties_entity.collection
+    - entity.page_properties_entity.canonical
+

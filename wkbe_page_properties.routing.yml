@@ -1,0 +1,61 @@
+
+# PagePropertiesEntity routing definition
+entity.page_properties_entity.canonical:
+  path: '/admin/content/pages/{page_properties_entity}'
+  defaults:
+    _entity_view: 'page_properties_entity'
+    _title: 'Page properties'
+  requirements:
+    _entity_access: 'page_properties_entity.view'
+  options:
+    _admin_route: TRUE
+
+entity.page_properties_entity.collection:
+  path: '/admin/content/pages'
+  defaults:
+    _entity_list: 'page_properties_entity'
+    _title: 'Page properties list'
+  requirements:
+    _permission: 'edit page properties entities'
+  options:
+    _admin_route: TRUE
+
+entity.page_properties_entity.add_form:
+  path: '/admin/content/pages/add'
+  defaults:
+    _entity_form: page_properties_entity.add
+    _title: 'Add Page properties'
+  requirements:
+    _permission: 'add page properties entities'
+  options:
+    _admin_route: TRUE
+
+entity.page_properties_entity.edit_form:
+  path: '/admin/content/pages/{page_properties_entity}/edit'
+  defaults:
+    _entity_form: page_properties_entity.edit
+    _title: 'Edit Page properties'
+  requirements:
+    _permission: 'edit page properties entities'
+  options:
+    _admin_route: TRUE
+
+entity.page_properties_entity.delete_form:
+  path: '/admin/content/pages/{page_properties_entity}/delete'
+  defaults:
+    _entity_form: page_properties_entity.delete
+    _title: 'Delete Page properties'
+  requirements:
+    _permission: 'delete page properties entities'
+  options:
+    _admin_route: TRUE
+
+page_properties_entity.settings:
+  path: '/admin/structure/page_properties_entity/settings'
+  defaults:
+   _form: '\Drupal\wkbe_page_properties\Form\PagePropertiesEntitySettingsForm'
+   _title: 'Page properties settings'
+  requirements:
+    _permission: 'administer page properties entities'
+  options:
+    _admin_route: TRUE

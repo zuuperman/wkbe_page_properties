@@ -1,0 +1,16 @@
+add page properties entities:
+  title: 'Create new Page properties entities'
+
+administer page properties entities:
+  title: 'Administer Page properties entities'
+  description: 'Allow to access the administration form to configure Page properties entities.'
+  restrict access: true
+
+delete page properties entities:
+  title: 'Delete Page properties entities'
+
+edit page properties entities:
+  title: 'Edit Page properties entities'
+
+edit page properties visibility settings:
+  title: 'Edit the visibility settings of Page properties'
