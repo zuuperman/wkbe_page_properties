@@ -90,7 +90,6 @@ class PagePropertiesEntityForm extends ContentEntityForm {
       $condition->submitConfigurationForm($form, $condition_values);
       if ($condition instanceof ContextAwarePluginInterface) {
         $context_mapping = isset($values['context_mapping']) ? $values['context_mapping'] : [];
-        dsm($context_mapping);
         $condition->setContextMapping($context_mapping);
       }
       // Update the original form values.
