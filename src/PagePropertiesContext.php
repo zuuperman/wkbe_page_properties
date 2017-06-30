@@ -85,7 +85,7 @@ class PagePropertiesContext {
    * @param RouteMatchInterface $route_match
    * @param ModuleHandlerInterface $module_handler
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager, LanguageManagerInterface $language_manager, ContextHandlerInterface $context_handler, 
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, LanguageManagerInterface $language_manager, ContextHandlerInterface $context_handler,
                               ContextRepositoryInterface $context_repository, RouteMatchInterface $route_match, PathMatcherInterface $path_matcher, ModuleHandlerInterface $module_handler) {
     $this->languageManager = $language_manager;
     $this->entityTypeManager = $entity_type_manager;
@@ -105,7 +105,6 @@ class PagePropertiesContext {
     // If translation is enabled, add language conditions.
     $langcode = NULL;
     if ($this->moduleHandler->moduleExists('content_translation')) {
-
       if (\Drupal::getContainer()->get('content_translation.manager')->isEnabled('page_properties_entity')) {
         $language = $this->languageManager->getCurrentLanguage();
         $langcode = $language->getId();
@@ -115,11 +114,13 @@ class PagePropertiesContext {
 
     // $query->condition('status', 1); publishing status disabled for now.
     $pages_condition = $query->orConditionGroup()
-      ->condition('field_pages.value', $this->routeMatch->getRouteObject()->getPath());
+      ->condition('field_pages.value', \Drupal::service('path.current')->getPath());
 
     $args = explode('/', $this->routeMatch->getRouteObject()->getPath());
     // Remove first and last arg.
-    array_pop($args);
+    if (count($args) > 2) {
+      array_pop($args);
+    }
     array_shift($args);
 
     // Check for every arg, if the path/* or path* exists. (for example /user/*)
